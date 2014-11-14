@@ -16,7 +16,7 @@ import com.gilang.boca.customclass.NonSwipeablePager;
 public class ScheduleFragment extends Fragment {
 
 	private static final int NUM_PAGES = 2;
-	private ImageView header;
+	public static ImageView headerImage;
 	public static NonSwipeablePager pager;
 	private PagerAdapter adapter;
 	
@@ -26,7 +26,7 @@ public class ScheduleFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 		super.onCreateView(inflater, container, savedInstanceState);
 		View rootView = inflater.inflate(R.layout.fragment_schedule, container, false);
-		header = (ImageView) rootView.findViewById(R.id.imageView1);
+		headerImage = (ImageView) rootView.findViewById(R.id.imageView1);
 		pager = (NonSwipeablePager) rootView.findViewById(R.id.pager);
 		adapter = new ScreenSlidePagerAdapter(getActivity().getSupportFragmentManager());
 		pager.setAdapter(adapter);
@@ -44,7 +44,7 @@ public class ScheduleFragment extends Fragment {
             switch(position){
             case 0: fragment = new SelectTimeFragment();
             		break;
-            case 1: fragment = new SelectTimeFragment();
+            case 1: fragment = new DataDiriFragment();
     				break;
             case 2: fragment = new SelectTimeFragment();
 					break;

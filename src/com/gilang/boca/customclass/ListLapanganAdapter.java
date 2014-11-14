@@ -54,7 +54,8 @@ public class ListLapanganAdapter extends BaseAdapter {
 				
 				@Override
 				public void onClick(View v) {
-					ScheduleFragment.pager.setCurrentItem(1);
+					ScheduleFragment.pager.setCurrentItem(1, true);
+					ScheduleFragment.headerImage.setImageResource(R.drawable.schedule2);
 				}
 			});
 			convertView.setTag(holder);
