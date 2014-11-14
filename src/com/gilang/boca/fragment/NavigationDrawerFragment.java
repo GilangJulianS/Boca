@@ -1,4 +1,7 @@
-package com.gilang.boca;
+package com.gilang.boca.fragment;
+
+import com.gilang.boca.R;
+import com.gilang.boca.customclass.DrawerItemAdapter;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
@@ -97,20 +100,19 @@ public class NavigationDrawerFragment extends Fragment {
 			Bundle savedInstanceState) {
 		mDrawerListView = (ListView) inflater.inflate(
 				R.layout.fragment_navigation_drawer, container, false);
-		mDrawerListView
-				.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+		mDrawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 					@Override
 					public void onItemClick(AdapterView<?> parent, View view,
 							int position, long id) {
 						selectItem(position);
 					}
 				});
-		mDrawerListView.setAdapter(new ArrayAdapter<String>(getActionBar()
-				.getThemedContext(), R.layout.drawer_item,
-				R.id.text1, new String[] {
-						getString(R.string.title_section1),
-						getString(R.string.title_section2),
-						getString(R.string.title_section3), }));
+		DrawerItemAdapter adapter = new DrawerItemAdapter(getActivity());
+		adapter.addHeader("Menu");
+		adapter.addItem(getString(R.string.title_section1));
+		adapter.addItem(getString(R.string.title_section2));
+		adapter.addItem(getString(R.string.title_section3));
+		mDrawerListView.setAdapter(adapter);
 		mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
 		return mDrawerListView;
 	}

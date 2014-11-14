@@ -1,4 +1,9 @@
-package com.gilang.boca;
+package com.gilang.boca.main;
+
+import com.gilang.boca.R;
+import com.gilang.boca.fragment.MainFragment;
+import com.gilang.boca.fragment.NavigationDrawerFragment;
+import com.gilang.boca.fragment.ScheduleFragment;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -36,6 +41,8 @@ public class MainActivity extends ActionBarActivity implements
 		FragmentManager fragmentManager = getSupportFragmentManager();
 		switch(position){
 		case 0: fragmentManager.beginTransaction().replace(R.id.container, new MainFragment()).commit();
+				break;
+		case 1: fragmentManager.beginTransaction().replace(R.id.container, new ScheduleFragment()).commit();
 				break;
 		}
 		

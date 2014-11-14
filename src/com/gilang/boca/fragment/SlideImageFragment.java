@@ -1,4 +1,6 @@
-package com.gilang.boca;
+package com.gilang.boca.fragment;
+
+import com.gilang.boca.R;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -23,7 +25,7 @@ public class SlideImageFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState){
-		ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.slide_image_page, container, false);
+		ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.page_image_slider, container, false);
 		image = (ImageView) rootView.findViewById(R.id.imageView1);
 		image.setImageResource(resource);
 		return rootView;
