@@ -17,7 +17,7 @@ public class ScheduleFragment extends Fragment {
 
 	private static final int NUM_PAGES = 2;
 	private ImageView header;
-	private NonSwipeablePager pager;
+	public static NonSwipeablePager pager;
 	private PagerAdapter adapter;
 	
 	public ScheduleFragment() {

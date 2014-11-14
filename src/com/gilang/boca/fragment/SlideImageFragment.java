@@ -1,18 +1,24 @@
 package com.gilang.boca.fragment;
 
-import com.gilang.boca.R;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
 import android.widget.ImageView;
+
+import com.gilang.boca.R;
 
 public class SlideImageFragment extends Fragment {
 
 	ImageView image;
-	int resource;
+	int resource;	
 	
 	public SlideImageFragment() {
 		
@@ -30,5 +36,4 @@ public class SlideImageFragment extends Fragment {
 		image.setImageResource(resource);
 		return rootView;
 	}
-
 }

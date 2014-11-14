@@ -27,16 +27,6 @@
                 android:ems="10"
                 android:inputType="date" />
 
-            <Button
-                android:id="@+id/button1"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/editText1"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:text="V" />
-
         </RelativeLayout>
 
     </LinearLayout>
@@ -64,18 +54,33 @@
                 android:ems="10"
                 android:inputType="date" />
 
-            <Button
-                android:id="@+id/button2"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/editText2"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:text="V" />
-
         </RelativeLayout>
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jenis Lapangan" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Cari Lapangan" />
+
+    <FrameLayout
+        android:id="@+id/containerLapangan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+    </FrameLayout>
 
 </LinearLayout>
