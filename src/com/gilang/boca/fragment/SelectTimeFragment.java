@@ -24,10 +24,13 @@ import com.gilang.boca.R;
 public class SelectTimeFragment extends Fragment {
 
 	DatePickerDialog.OnDateSetListener setDate;
-	TimePickerDialog.OnTimeSetListener setTime;
-	Calendar calendar;
+	TimePickerDialog.OnTimeSetListener setTime1;
+	TimePickerDialog.OnTimeSetListener setTime2;
+	Calendar calendar1;
+	Calendar calendar2;
 	EditText textDate;
-	EditText textTime;
+	EditText textTime1;
+	EditText textTime2;
 	Spinner spinner;
 	Button buttonSearch;
 	
@@ -39,12 +42,15 @@ public class SelectTimeFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 		super.onCreateView(inflater, container, savedInstanceState);
 		View rootView = inflater.inflate(R.layout.fragment_select_time, container, false);
-		calendar = Calendar.getInstance();
+		calendar1 = Calendar.getInstance();
+		calendar2 = Calendar.getInstance();
 		textDate = (EditText) rootView.findViewById(R.id.editText1);
-		textTime = (EditText) rootView.findViewById(R.id.editText2);
-		buttonSearch = (Button) rootView.findViewById(R.id.buttonCariLap);
+		textTime1 = (EditText) rootView.findViewById(R.id.editText2);
+		textTime2 = (EditText) rootView.findViewById(R.id.editText3);
+		buttonSearch = (Button) rootView.findViewById(R.id.button1);
 		textDate.setFocusable(false);
-		textTime.setFocusable(false);
+		textTime1.setFocusable(false);
+		textTime2.setFocusable(false);
 		
 		setDate = new DatePickerDialog.OnDateSetListener() {
 
@@ -52,20 +58,30 @@ public class SelectTimeFragment extends Fragment {
 		    public void onDateSet(DatePicker view, int year, int monthOfYear,
 		            int dayOfMonth) {
 		        // TODO Auto-generated method stub
-		        calendar.set(Calendar.YEAR, year);
-		        calendar.set(Calendar.MONTH, monthOfYear);
-		        calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-		        updateLabel();
+		        calendar1.set(Calendar.YEAR, year);
+		        calendar1.set(Calendar.MONTH, monthOfYear);
+		        calendar1.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+		        updateDate();
 		    }
 		};
 		
-		setTime = new OnTimeSetListener() {
+		setTime1 = new OnTimeSetListener() {
 			
 			@Override
 			public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-				calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
-				calendar.set(Calendar.MINUTE, minute);
-				updateLabel();
+				calendar1.set(Calendar.HOUR_OF_DAY, hourOfDay);
+				calendar1.set(Calendar.MINUTE, minute);
+				updateTime1();
+			}
+		};
+		
+		setTime2 = new OnTimeSetListener() {
+			
+			@Override
+			public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+				calendar2.set(Calendar.HOUR_OF_DAY, hourOfDay);
+				calendar2.set(Calendar.MINUTE, minute);
+				updateTime2();
 			}
 		};
 		
@@ -73,18 +89,27 @@ public class SelectTimeFragment extends Fragment {
 			
 			@Override
 			public void onClick(View v) {
-				new DatePickerDialog(getActivity(), setDate, calendar
-	                    .get(Calendar.YEAR), calendar.get(Calendar.MONTH),
-	                    calendar.get(Calendar.DAY_OF_MONTH)).show();
+				new DatePickerDialog(getActivity(), setDate, calendar1
+	                    .get(Calendar.YEAR), calendar1.get(Calendar.MONTH),
+	                    calendar1.get(Calendar.DAY_OF_MONTH)).show();
 			}
 		});
 		
-		textTime.setOnClickListener(new View.OnClickListener() {
+		textTime1.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				new TimePickerDialog(getActivity(), setTime, calendar.get(Calendar.HOUR_OF_DAY),
-						calendar.get(Calendar.MINUTE), true).show();
+				new TimePickerDialog(getActivity(), setTime1, calendar1.get(Calendar.HOUR_OF_DAY),
+						calendar1.get(Calendar.MINUTE), true).show();
+			}
+		});
+		
+		textTime2.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				new TimePickerDialog(getActivity(), setTime2, calendar2.get(Calendar.HOUR_OF_DAY),
+						calendar2.get(Calendar.MINUTE), true).show();
 			}
 		});
 		
@@ -105,11 +130,19 @@ public class SelectTimeFragment extends Fragment {
 		return rootView;
 	}
 	
-	private void updateLabel() {
+	private void updateDate() {
 	    SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy", Locale.US);
-	    SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm", Locale.US);
-	    textDate.setText(sdf.format(calendar.getTime()));
-	    textTime.setText(timeFormat.format(calendar.getTime()));
+	    textDate.setText(sdf.format(calendar1.getTime()));
+	}
+	
+	private void updateTime1(){
+		SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm", Locale.US);
+		textTime1.setText(timeFormat.format(calendar1.getTime()));
+	}
+	
+	private void updateTime2(){
+		SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm", Locale.US);
+		textTime2.setText(timeFormat.format(calendar2.getTime()));
 	}
 
 }
