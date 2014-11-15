@@ -16,7 +16,7 @@ import com.gilang.boca.customclass.NonSwipeablePager;
 public class FieldFragment extends Fragment {
 
 	private static final int NUM_PAGES = 3;
-	private ImageView header;
+	public static ImageView header;
 	public static NonSwipeablePager pager;
 	private PagerAdapter adapter;
 	
@@ -26,7 +26,7 @@ public class FieldFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 		super.onCreateView(inflater, container, savedInstanceState);
 		View rootView = inflater.inflate(R.layout.fragment_field, container, false);
-		header = (ImageView) rootView.findViewById(R.id.imageView1);
+		header = (ImageView) rootView.findViewById(R.id.imageSelectField);
 		pager = (NonSwipeablePager) rootView.findViewById(R.id.pagerLapangan);
 		adapter = new ScreenSlidePagerAdapter(getActivity().getSupportFragmentManager());
 		pager.setAdapter(adapter);
@@ -44,7 +44,7 @@ public class FieldFragment extends Fragment {
             switch(position){
             case 0: fragment = new FieldSelectFragment();
             		break;
-            case 1: fragment = new FieldSelectFragment();
+            case 1: fragment = new SelectTimeFieldFragment();
             		break;
             case 2: fragment = new FieldSelectFragment();
             		break;

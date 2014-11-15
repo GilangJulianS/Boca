@@ -1,14 +1,16 @@
 package com.gilang.boca.main;
 
-public class DataPopUpField {
+public class DataField {
 	
+	int resId;
 	String fieldName;
 	int fieldImageResId;
 	String fieldAddress;
 	String fieldPhone;
 	String fieldPrice;
 	
-	public DataPopUpField() {
+	public DataField() {
+		resId = 0;
 		fieldName = "";
 		fieldImageResId = 0;
 		fieldAddress = "";
@@ -16,7 +18,7 @@ public class DataPopUpField {
 		fieldPrice = "";
 	}
 	
-	public DataPopUpField(String fieldName, int fieldImageResId, String fieldAddress, String fieldPhone, String fieldPrice) {
+	public DataField(int resId, String fieldName, int fieldImageResId, String fieldAddress, String fieldPhone, String fieldPrice) {
 		this.fieldName = fieldName;
 		this.fieldImageResId = fieldImageResId;
 		this.fieldAddress = fieldAddress;

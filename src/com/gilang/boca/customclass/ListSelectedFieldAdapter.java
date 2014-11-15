@@ -2,9 +2,6 @@ package com.gilang.boca.customclass;
 
 import java.util.List;
 
-import com.gilang.boca.R;
-import com.gilang.boca.main.DataSelectedField;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,12 +9,15 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.gilang.boca.R;
+import com.gilang.boca.main.DataField;
+
 public class ListSelectedFieldAdapter extends BaseAdapter {
 
-	List<DataSelectedField> datField;
+	List<DataField> datField;
 	private LayoutInflater inflater;
 	
-	public ListSelectedFieldAdapter(Context context, List<DataSelectedField> datFields) {
+	public ListSelectedFieldAdapter(Context context, List<DataField> datFields) {
 		this.datField = datFields;
 		inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	}
@@ -34,8 +34,7 @@ public class ListSelectedFieldAdapter extends BaseAdapter {
 
 	@Override
 	public long getItemId(int position) {
-		datField.get(position).getId();
-		return 0;
+		return position;
 	}
 
 	@Override
@@ -44,8 +43,8 @@ public class ListSelectedFieldAdapter extends BaseAdapter {
 			convertView = inflater.inflate(R.layout.list_select_field, null);
 			TextView selectedField = (TextView)convertView.findViewById(R.id.selectField);
 			TextView address = (TextView)convertView.findViewById(R.id.address);
-			selectedField.setText(datField.get(position).getField());
-			address.setText(datField.get(position).getAddress());
+			selectedField.setText(datField.get(position).getFieldName());
+			address.setText(datField.get(position).getFieldAddress());
 		}
 		return convertView;
 	}

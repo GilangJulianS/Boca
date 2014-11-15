@@ -6,7 +6,7 @@
     android:background="#FFFFFF" >
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/imageSelectField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/schedule1" />

@@ -32,7 +32,7 @@ public class SlideImageFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState){
 		ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.page_image_slider, container, false);
-		image = (ImageView) rootView.findViewById(R.id.imageView1);
+		image = (ImageView) rootView.findViewById(R.id.imageSelectField);
 		image.setImageResource(resource);
 		return rootView;
 	}

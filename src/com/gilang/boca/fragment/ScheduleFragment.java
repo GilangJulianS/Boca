@@ -26,7 +26,7 @@ public class ScheduleFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 		super.onCreateView(inflater, container, savedInstanceState);
 		View rootView = inflater.inflate(R.layout.fragment_schedule, container, false);
-		headerImage = (ImageView) rootView.findViewById(R.id.imageView1);
+		headerImage = (ImageView) rootView.findViewById(R.id.imageSelectField);
 		pager = (NonSwipeablePager) rootView.findViewById(R.id.pager);
 		adapter = new ScreenSlidePagerAdapter(getActivity().getSupportFragmentManager());
 		pager.setAdapter(adapter);

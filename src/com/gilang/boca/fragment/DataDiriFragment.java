@@ -27,7 +27,7 @@ public class DataDiriFragment extends Fragment {
 		super.onCreateView(inflater, container, savedInstanceState);
 		View rootView = inflater.inflate(R.layout.fragment_data_diri, container, false);
 		
-		name = (EditText) rootView.findViewById(R.id.editText1);
+		name = (EditText) rootView.findViewById(R.id.selectFieldDate);
 		id = (EditText) rootView.findViewById(R.id.editText2);
 		email = (EditText) rootView.findViewById(R.id.editText3);
 		phone = (EditText) rootView.findViewById(R.id.editText4);

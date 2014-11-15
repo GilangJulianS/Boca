@@ -15,8 +15,7 @@ import android.widget.Spinner;
 
 import com.gilang.boca.R;
 import com.gilang.boca.customclass.ListSelectedFieldAdapter;
-import com.gilang.boca.main.DataPopUpField;
-import com.gilang.boca.main.DataSelectedField;
+import com.gilang.boca.main.DataField;
 
 public class FieldSelectFragment extends Fragment {
 	
@@ -43,11 +42,11 @@ public class FieldSelectFragment extends Fragment {
 			@Override
 			public void onItemSelected(AdapterView<?> parent, View view,
 					int position, long id) {
-				List<DataSelectedField> datLap = new ArrayList<>();
-				datLap.add(new DataSelectedField(0,"Futsal 76", "Jl. Blabla 1 Bandung Setengah selatan setengah barat"));
-				datLap.add(new DataSelectedField(1,"Queen Futsal", "Jl. Blabla 1 Bandung Setengah selatan setengah barat"));
-				datLap.add(new DataSelectedField(2,"YPKP Futsal", "Jl. Blabla 1 Bandung Setengah selatan setengah barat"));
-				datLap.add(new DataSelectedField(3,"Futsal", "Jl. Blabla 1 Bandung Setengah selatan setengah barat"));
+				List<DataField> datLap = new ArrayList<>();
+				datLap.add(new DataField(0,"Futsal 76",0, "Jl. Blabla 1 Bandung Setengah selatan setengah barat","phone","price"));
+				datLap.add(new DataField(1,"Queen Futsal",0, "Jl. Blabla 1 Bandung Setengah selatan setengah barat","phone","price"));
+				datLap.add(new DataField(2,"YPKP Futsal",0, "Jl. Blabla 1 Bandung Setengah selatan setengah barat","phone","price"));
+				datLap.add(new DataField(3,"Futsal", 0,"Jl. Blabla 1 Bandung Setengah selatan setengah barat","phone","price"));
 				ListSelectedFieldAdapter adapter = new ListSelectedFieldAdapter(getActivity(), datLap);
 				listView.setAdapter(adapter);
 			}
@@ -64,7 +63,7 @@ public class FieldSelectFragment extends Fragment {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				new FieldDialogFragment(new DataPopUpField("Queen", R.drawable.field_image, 
+				new FieldDialogFragment(new DataField(0, "Queen", R.drawable.field_image, 
 						"Jl. Bandung Iyaa", "08980980", "Rp 900.000 - Rp 1.000.000.000"))
 				.show(getFragmentManager(), "MyDialog");
 			}

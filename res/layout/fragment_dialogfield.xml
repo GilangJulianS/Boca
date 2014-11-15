@@ -9,6 +9,7 @@
         android:id="@+id/fieldName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#ffffff"
         android:layout_gravity="center_horizontal"
         android:text="TextView" />
 
@@ -35,6 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="fill"
+        	android:textColor="#ffffff"
             android:text="TextView" />
 
     </LinearLayout>
@@ -54,6 +56,7 @@
             android:id="@+id/fieldPhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+	        android:textColor="#ffffff"
             android:text="TextView" />
 
     </LinearLayout>
@@ -62,6 +65,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#ffffff"
         android:layout_gravity="center_horizontal"
         android:text="Harga per jam" />
 
@@ -69,11 +73,12 @@
         android:id="@+id/fieldPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#ffffff"
         android:layout_gravity="center_horizontal"
         android:text="TextView" />
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/imageSelectField"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
