@@ -42,7 +42,7 @@ public class SelectTimeFragment extends Fragment {
 		calendar = Calendar.getInstance();
 		textDate = (EditText) rootView.findViewById(R.id.editText1);
 		textTime = (EditText) rootView.findViewById(R.id.editText2);
-		buttonSearch = (Button) rootView.findViewById(R.id.button1);
+		buttonSearch = (Button) rootView.findViewById(R.id.buttonCariLap);
 		textDate.setFocusable(false);
 		textTime.setFocusable(false);
 		
@@ -99,7 +99,7 @@ public class SelectTimeFragment extends Fragment {
 		
 		String[] spinnerItems = {"Lapangan Besar", "Lapangan Futsal"};
 		ArrayAdapter arAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_dropdown_item, spinnerItems);
-		spinner = (Spinner)rootView.findViewById(R.id.spinner1);
+		spinner = (Spinner)rootView.findViewById(R.id.spinnerCity);
 		spinner.setAdapter(arAdapter);
 		
 		return rootView;

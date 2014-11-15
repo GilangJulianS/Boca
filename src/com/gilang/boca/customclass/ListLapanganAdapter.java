@@ -46,10 +46,10 @@ public class ListLapanganAdapter extends BaseAdapter {
 		if(convertView == null){
 			holder = new ViewHolder();
 			convertView = inflater.inflate(R.layout.item_list_lapangan, null);
-			holder.name = (TextView)convertView.findViewById(R.id.textView1);
-			holder.field = (TextView)convertView.findViewById(R.id.textView2);
+			holder.name = (TextView)convertView.findViewById(R.id.field);
+			holder.field = (TextView)convertView.findViewById(R.id.adress);
 			holder.address = (TextView)convertView.findViewById(R.id.textView3);
-			holder.button = (Button)convertView.findViewById(R.id.button1);
+			holder.button = (Button)convertView.findViewById(R.id.buttonCariLap);
 			holder.button.setOnClickListener(new View.OnClickListener() {
 				
 				@Override

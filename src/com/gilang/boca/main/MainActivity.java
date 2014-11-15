@@ -1,6 +1,7 @@
 package com.gilang.boca.main;
 
 import com.gilang.boca.R;
+import com.gilang.boca.fragment.FieldFragment;
 import com.gilang.boca.fragment.MainFragment;
 import com.gilang.boca.fragment.NavigationDrawerFragment;
 import com.gilang.boca.fragment.ScheduleFragment;
@@ -42,10 +43,11 @@ public class MainActivity extends ActionBarActivity implements
 		switch(position){
 		case 0: fragmentManager.beginTransaction().replace(R.id.container, new MainFragment()).commit();
 				break;
-		case 1: fragmentManager.beginTransaction().replace(R.id.container, new ScheduleFragment()).commit();
+		case 1: fragmentManager.beginTransaction().replace(R.id.container, new FieldFragment()).commit();
 				break;
-		}
-		
+		case 2: fragmentManager.beginTransaction().replace(R.id.container, new ScheduleFragment()).commit();
+				break;
+		}		
 	}
 
 	public void restoreActionBar() {
