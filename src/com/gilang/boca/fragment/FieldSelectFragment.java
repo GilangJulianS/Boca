@@ -35,7 +35,7 @@ public class FieldSelectFragment extends Fragment {
 		String[] cities = {"Bandung", "Bekasi", "Jakarta", "Surabaya"}; 
 		ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item,cities); 
 		spinner.setAdapter(adapter);
-		listView = (ListView)rootView.findViewById(R.id.listView1);
+		listView = (ListView)rootView.findViewById(R.id.listTimeData);
 		
 		spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 

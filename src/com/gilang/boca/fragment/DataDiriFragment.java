@@ -31,7 +31,7 @@ public class DataDiriFragment extends Fragment {
 		id = (EditText) rootView.findViewById(R.id.editText2);
 		email = (EditText) rootView.findViewById(R.id.editText3);
 		phone = (EditText) rootView.findViewById(R.id.editText4);
-		buttonSubmit = (Button) rootView.findViewById(R.id.button1);
+		buttonSubmit = (Button) rootView.findViewById(R.id.bookButton);
 		buttonSubmit.setOnClickListener(new View.OnClickListener() {
 			
 			@Override

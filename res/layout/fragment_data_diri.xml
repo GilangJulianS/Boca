@@ -5,7 +5,7 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/fieldTimeSchedule"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nama Lengkap" />
@@ -20,7 +20,7 @@
     </EditText>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/fieldTimePrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nomor Identitas" />
@@ -56,7 +56,7 @@
         android:ems="10" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/bookButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Lanjut"
