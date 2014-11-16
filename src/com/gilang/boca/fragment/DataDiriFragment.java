@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.gilang.boca.R;
 
@@ -36,7 +37,7 @@ public class DataDiriFragment extends Fragment {
 			
 			@Override
 			public void onClick(View v) {
-				
+				Toast.makeText(getActivity(), "Pembelian Berhasil!", Toast.LENGTH_SHORT).show();
 			}
 		});
 		
