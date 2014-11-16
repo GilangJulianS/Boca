@@ -36,7 +36,7 @@ public class ListLapanganFragment extends Fragment {
 		items.add(new DataLapangan(4, "Hiroz Futsal", "Lapangan C", "Jl. Batununggal Lestari No. 11"));
 		items.add(new DataLapangan(5, "Hiroz Futsal", "Lapangan D", "Jl. Batununggal Lestari No. 11"));
 		adapter = new ListLapanganAdapter(getActivity(), items);
-		listLapangan = (ListView) rootView.findViewById(R.id.listView1);
+		listLapangan = (ListView) rootView.findViewById(R.id.listTimeData);
 		
 		listLapangan.setAdapter(adapter);
 		return rootView;

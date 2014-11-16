@@ -9,14 +9,14 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/field"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Tanggal"
             android:layout_weight="1" />
 
         <EditText
-            android:id="@+id/editText1"
+            android:id="@+id/selectFieldDate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/adress"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Waktu"
@@ -69,12 +69,12 @@
         android:text="Jenis Lapangan" />
 
     <Spinner
-        android:id="@+id/spinner1"
+        android:id="@+id/spinnerCity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/buttonCariLap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"

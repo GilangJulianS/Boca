@@ -13,21 +13,21 @@ import android.widget.ImageView;
 import com.gilang.boca.R;
 import com.gilang.boca.customclass.NonSwipeablePager;
 
-public class ScheduleFragment extends Fragment {
+public class FieldFragment extends Fragment {
 
-	private static final int NUM_PAGES = 2;
-	public static ImageView headerImage;
+	private static final int NUM_PAGES = 3;
+	public static ImageView header;
 	public static NonSwipeablePager pager;
 	private PagerAdapter adapter;
 	
-	public ScheduleFragment() {
+	public FieldFragment() {
 	}
 	
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 		super.onCreateView(inflater, container, savedInstanceState);
-		View rootView = inflater.inflate(R.layout.fragment_schedule, container, false);
-		headerImage = (ImageView) rootView.findViewById(R.id.imageSelectField);
-		pager = (NonSwipeablePager) rootView.findViewById(R.id.pager);
+		View rootView = inflater.inflate(R.layout.fragment_field, container, false);
+		header = (ImageView) rootView.findViewById(R.id.imageSelectField);
+		pager = (NonSwipeablePager) rootView.findViewById(R.id.pagerLapangan);
 		adapter = new ScreenSlidePagerAdapter(getActivity().getSupportFragmentManager());
 		pager.setAdapter(adapter);
 		return rootView;
@@ -42,14 +42,14 @@ public class ScheduleFragment extends Fragment {
         public Fragment getItem(int position) {
         	Fragment fragment = null;
             switch(position){
-            case 0: fragment = new SelectTimeFragment();
+            case 0: fragment = new FieldSelectFragment();
             		break;
-            case 1: fragment = new DataDiriFragment();
-    				break;
-            case 2: fragment = new SelectTimeFragment();
-					break;
-            case 3: fragment = new SelectTimeFragment();
-					break;
+            case 1: fragment = new SelectTimeFieldFragment();
+            		break;
+            case 2: fragment = new FieldSelectFragment();
+            		break;
+            case 3: fragment = new FieldSelectFragment();
+            		break;
             }
             return fragment;
         	
