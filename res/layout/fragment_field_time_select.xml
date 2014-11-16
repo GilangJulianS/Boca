@@ -6,6 +6,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:paddingTop="10dp"
         android:layout_height="wrap_content" >
 
         <TextView
@@ -22,12 +23,13 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:text="TextView"
-            android:textColor="#003230" />
+            android:textColor="#003240" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:paddingTop="10dp"
         android:layout_height="wrap_content" >
 
         <TextView
@@ -53,6 +55,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:paddingTop="10dp"
         android:layout_height="wrap_content" >
 
         <TextView
@@ -76,6 +79,7 @@
     <ListView
         android:id="@+id/listTimeData"
         android:layout_width="match_parent"
+        android:paddingTop="10dp"
         android:layout_height="wrap_content" >
     </ListView>
 
