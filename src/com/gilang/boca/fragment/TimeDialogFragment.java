@@ -30,7 +30,7 @@ public class TimeDialogFragment extends DialogFragment {
 			@Override
 			public void onClick(View v) {
 				FieldFragment.pager.setCurrentItem(2, true);
-				FieldFragment.header.setImageResource(R.drawable.arrowcl2);
+				FieldFragment.header.setImageResource(R.drawable.arrowcl3);
 				dialog.dismiss();
 			}
 		});

@@ -46,7 +46,7 @@ public class FieldFragment extends Fragment {
             		break;
             case 1: fragment = new SelectTimeFieldFragment();
             		break;
-            case 2: fragment = new FieldSelectFragment();
+            case 2: fragment = new DataDiriFragment();
             		break;
             case 3: fragment = new FieldSelectFragment();
             		break;
