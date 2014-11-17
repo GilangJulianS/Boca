@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="25dp"
     android:background="#050454"
     android:orientation="vertical" >
 
@@ -10,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#ffffff"
+        android:paddingBottom="7dp"
         android:layout_gravity="center_horizontal"
         android:text="TextView" />
 
@@ -17,11 +19,14 @@
         android:id="@+id/fieldImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="10dp"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/abc_ab_bottom_solid_dark_holo" />
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:paddingTop="5dp"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal" >
 
@@ -44,6 +49,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingTop="6dp"
         android:gravity="center_horizontal" >
 
         <ImageView
@@ -66,6 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#ffffff"
+        android:paddingTop="17dp"
         android:layout_gravity="center_horizontal"
         android:text="Harga per jam" />
 
@@ -74,6 +81,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#ffffff"
+        android:paddingTop="2dp"
+        android:paddingBottom="10dp"
         android:layout_gravity="center_horizontal"
         android:text="TextView" />
 
@@ -81,6 +90,7 @@
         android:id="@+id/imageSelectField"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
+        android:paddingTop="20dp"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/buttonselected" />
 

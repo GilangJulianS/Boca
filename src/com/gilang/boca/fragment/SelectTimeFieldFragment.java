@@ -25,13 +25,16 @@ import com.gilang.boca.main.FieldTimeData;
 
 public class SelectTimeFieldFragment extends Fragment {
 
+	public static int hour;
 	DatePickerDialog.OnDateSetListener setDate;
 	Calendar calendar;
 	TextView fieldName;
 	EditText textDate;
 	ListView listViewItem;
 	
+	
 	public SelectTimeFieldFragment() {
+		hour = 1;
 	}
 
 	@Override
