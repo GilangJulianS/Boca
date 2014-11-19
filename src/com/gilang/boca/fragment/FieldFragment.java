@@ -1,6 +1,9 @@
 package com.gilang.boca.fragment;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -12,6 +15,7 @@ import android.widget.ImageView;
 
 import com.gilang.boca.R;
 import com.gilang.boca.customclass.NonSwipeablePager;
+import com.gilang.boca.main.MainActivity;
 
 public class FieldFragment extends Fragment {
 
@@ -19,8 +23,11 @@ public class FieldFragment extends Fragment {
 	public static ImageView header;
 	public static NonSwipeablePager pager;
 	private PagerAdapter adapter;
+	private ActionBarDrawerToggle toggle;
+	private MainActivity activity;
 	
-	public FieldFragment() {
+	public FieldFragment(Context context) {
+		activity = (MainActivity)context;
 	}
 	
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
@@ -30,6 +37,7 @@ public class FieldFragment extends Fragment {
 		pager = (NonSwipeablePager) rootView.findViewById(R.id.pagerLapangan);
 		adapter = new ScreenSlidePagerAdapter(getActivity().getSupportFragmentManager());
 		pager.setAdapter(adapter);
+		activity.setActivePager(pager);
 		return rootView;
 	}
 	
@@ -60,5 +68,18 @@ public class FieldFragment extends Fragment {
             return NUM_PAGES;
         }
     }
+	
+	@Override
+	public void onAttach(Activity activity){
+		super.onAttach(activity);
+		toggle = ((MainActivity)activity).getDrawer().getToggle();
+		toggle.setDrawerIndicatorEnabled(false);
+	}
+	
+	@Override
+	public void onDetach(){
+		super.onDetach();
+		toggle.setDrawerIndicatorEnabled(true);
+	}
 
 }

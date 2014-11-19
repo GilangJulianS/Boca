@@ -1,12 +1,14 @@
 package com.gilang.boca.fragment;
 
+import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +17,8 @@ import android.view.ViewGroup;
  */
 
 
-
-
 import com.gilang.boca.R;
+import com.gilang.boca.main.MainActivity;
 import com.viewpagerindicator.CirclePageIndicator;
 /**
  * A placeholder fragment containing a simple view.
@@ -27,7 +28,8 @@ public class MainFragment extends Fragment {
 	private ViewPager pager;
 	private PagerAdapter adapter;
 	private static final int NUM_PAGES = 4;
-	private  CirclePageIndicator titleIndicator;
+	private CirclePageIndicator titleIndicator;
+	private ActionBarDrawerToggle toggle;
 	
 	public MainFragment() {
 	}
@@ -59,13 +61,13 @@ public class MainFragment extends Fragment {
         public Fragment getItem(int position) {
         	SlideImageFragment fragment = new SlideImageFragment();
             switch(position){
-            case 0: fragment.setImage(R.drawable.speaker0);
+            case 0: fragment.setImage(R.drawable.lapangan1);
             		break;
-            case 1: fragment.setImage(R.drawable.speaker1);
+            case 1: fragment.setImage(R.drawable.lapangan2);
     				break;
-            case 2: fragment.setImage(R.drawable.speaker2);
+            case 2: fragment.setImage(R.drawable.lapangan3);
 					break;
-            case 3: fragment.setImage(R.drawable.speaker3);
+            case 3: fragment.setImage(R.drawable.lapangan4);
 					break;
             }
             return fragment;
@@ -77,4 +79,11 @@ public class MainFragment extends Fragment {
             return NUM_PAGES;
         }
     }
+	
+	@Override
+	public void onAttach(Activity activity){
+		super.onAttach(activity);
+		toggle = ((MainActivity)activity).getDrawer().getToggle();
+		toggle.setDrawerIndicatorEnabled(true);
+	}
 }

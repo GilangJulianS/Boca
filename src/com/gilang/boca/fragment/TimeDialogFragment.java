@@ -40,7 +40,7 @@ public class TimeDialogFragment extends DialogFragment {
 			@Override
 			public void onClick(View v) {
 				SelectTimeFieldFragment.hour++;
-				countHour.setText(""+SelectTimeFieldFragment.hour++);
+				countHour.setText(""+SelectTimeFieldFragment.hour);
 			}
 		});
         
@@ -50,8 +50,7 @@ public class TimeDialogFragment extends DialogFragment {
 			public void onClick(View v) {
 				if(SelectTimeFieldFragment.hour > 1){
 					SelectTimeFieldFragment.hour--;
-					countHour.setText(""+SelectTimeFieldFragment.hour++);
-					
+					countHour.setText(""+SelectTimeFieldFragment.hour);
 				}
 			}
 		});
@@ -61,6 +60,7 @@ public class TimeDialogFragment extends DialogFragment {
         buttonSelectField.setClickable(true);
         buttonSelectField.setOnClickListener(new View.OnClickListener() {
 			@Override
+			
 			public void onClick(View v) {
 				Toast.makeText(getActivity(), "test", Toast.LENGTH_SHORT);
 				FieldFragment.pager.setCurrentItem(2, true);

@@ -1,18 +1,21 @@
 package com.gilang.boca.main;
 
-import com.gilang.boca.R;
-import com.gilang.boca.fragment.FieldFragment;
-import com.gilang.boca.fragment.MainFragment;
-import com.gilang.boca.fragment.NavigationDrawerFragment;
-import com.gilang.boca.fragment.ScheduleFragment;
-
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.gilang.boca.R;
+import com.gilang.boca.fragment.ConfirmationFragment;
+import com.gilang.boca.fragment.FieldFragment;
+import com.gilang.boca.fragment.MainFragment;
+import com.gilang.boca.fragment.NavigationDrawerFragment;
+import com.gilang.boca.fragment.ScheduleFragment;
 
 public class MainActivity extends ActionBarActivity implements
 		NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -22,6 +25,7 @@ public class MainActivity extends ActionBarActivity implements
 	 * navigation drawer.
 	 */
 	private NavigationDrawerFragment mNavigationDrawerFragment;
+	private ViewPager pager;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +45,21 @@ public class MainActivity extends ActionBarActivity implements
 		// update the main content by replacing fragments
 		FragmentManager fragmentManager = getSupportFragmentManager();
 		switch(position){
-		case 0: fragmentManager.beginTransaction().replace(R.id.container, new MainFragment()).commit();
+		case 0: pager = null;
+				fragmentManager.beginTransaction().replace(R.id.container, new MainFragment())
+					.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
 				break;
-		case 1: fragmentManager.beginTransaction().replace(R.id.container, new FieldFragment()).commit();
+		case 1: pager = null;
+				fragmentManager.beginTransaction().replace(R.id.container, new FieldFragment(this))
+					.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
 				break;
-		case 2: fragmentManager.beginTransaction().replace(R.id.container, new ScheduleFragment()).commit();
+		case 2: pager = null;
+				fragmentManager.beginTransaction().replace(R.id.container, new ScheduleFragment(this))
+					.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
+				break;
+		case 3: pager = null;
+				fragmentManager.beginTransaction().replace(R.id.container, new ConfirmationFragment())
+					.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE).commit();
 				break;
 		}		
 	}
@@ -75,10 +89,37 @@ public class MainActivity extends ActionBarActivity implements
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
+		if (id == android.R.id.home) {
+			if(!mNavigationDrawerFragment.getToggle().isDrawerIndicatorEnabled()){
+				onUpSelected();
+				return true;
+			}
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	@Override
+	public void onBackPressed(){
+		if(!mNavigationDrawerFragment.getToggle().isDrawerIndicatorEnabled())
+			onUpSelected();
+		else
+			super.onBackPressed();
+	}
+	
+	public void onUpSelected(){
+		if(pager == null || pager.getCurrentItem() == 0)
+			getSupportFragmentManager().beginTransaction().replace(R.id.container, new MainFragment())
+				.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
+		else
+			pager.setCurrentItem(pager.getCurrentItem() - 1);
+	}
+	
+	public NavigationDrawerFragment getDrawer(){
+		return mNavigationDrawerFragment;
+	}
+	
+	public void setActivePager(ViewPager pager){
+		this.pager = pager;
 	}
 
 }

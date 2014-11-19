@@ -13,15 +13,12 @@
             android:id="@+id/fieldTimeSchedule"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="30dp"
             android:text="Lokasi" />
 
         <TextView
             android:id="@+id/field_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
             android:text="TextView"
             android:textColor="#003240" />
 
@@ -36,8 +33,6 @@
             android:id="@+id/fieldTimePrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:text="Tanggal" />
 
         <EditText
@@ -46,6 +41,7 @@
             android:layout_height="wrap_content"
             android:clickable="true"
             android:ems="10"
+            android:layout_marginLeft="10dp"
             android:textColor="#003230" >
 
             <requestFocus />
@@ -62,14 +58,12 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
             android:text="Jadwal" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
             android:text="(filter)"
             android:textColor="#050461"
             android:textSize="10dp" />

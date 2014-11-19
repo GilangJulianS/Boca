@@ -8,6 +8,6 @@
         android:id="@+id/imageSelectField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.71" />
+        android:scaleType="centerCrop" />
 
 </LinearLayout>

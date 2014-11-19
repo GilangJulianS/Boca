@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.gilang.boca.R;
+import com.gilang.boca.main.MainActivity;
 
 public class DataDiriFragment extends Fragment {
 
@@ -38,9 +39,10 @@ public class DataDiriFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				Toast.makeText(getActivity(), "Pembelian Berhasil!", Toast.LENGTH_SHORT).show();
+				((MainActivity)getActivity()).setActivePager(null);
+				((MainActivity)getActivity()).onUpSelected();
 			}
 		});
-		
 		return rootView;
 	}
 

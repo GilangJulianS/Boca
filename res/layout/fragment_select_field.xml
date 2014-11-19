@@ -8,34 +8,29 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
         android:layout_marginTop="15dp"
-	    android:layout_marginLeft="15dp"
-	    android:layout_marginRight="5dp"
-	    android:layout_marginBottom="3dp"
-        android:text="Pilih Lokasi" />
+        android:text="Pilih Lokasi"
+        android:textSize="20sp" />
 
     <Spinner
         android:id="@+id/spinnerCity"
         android:layout_width="146dp"
-        android:paddingBottom="15dp"
-	    android:layout_marginLeft="15dp"
-	    android:layout_marginRight="5dp"
+        android:paddingBottom="10dp"
         android:layout_height="41dp" />
 
     <TextView
         android:id="@+id/countHour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-	    android:layout_marginLeft="15dp"
-	    android:layout_marginRight="5dp"
-        android:paddingBottom="7dp"
-        android:text="Daftar Lapangan :" />
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="20dp"
+        android:text="Daftar Lapangan :"
+        android:textSize="20sp" />
 
     <ListView
         android:id="@+id/listTimeData"
         android:layout_width="match_parent"
-	    android:layout_marginLeft="15dp"
-	    android:layout_marginRight="10dp"
         android:layout_height="wrap_content" >
     </ListView>
 
